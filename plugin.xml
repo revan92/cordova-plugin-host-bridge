@@ -13,6 +13,9 @@
 
   <!-- iOS -->
   <platform name="ios">
+    <!-- Ensure WKWebView is available (Cordova iOS already links UIKit/WebKit) -->
+    <framework src="UIKit.framework" />
+    <framework src="WebKit.framework" />
     <!-- Make plugin available as a Cordova feature -->
     <config-file target="config.xml" parent="/*">
       <feature name="HostBridge">

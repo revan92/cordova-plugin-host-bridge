@@ -1,8 +1,7 @@
-#import <Cordova/CDV.h>
+#import <Cordova/CDVPlugin.h>
 
 @interface CDVHostBridge : CDVPlugin
-- (void)emitEventToReactNative:(CDVInvokedUrlCommand*)command;
-- (void)startReceivingFromReactNative:(CDVInvokedUrlCommand*)command;
-- (void)stopReceivingFromReactNative:(CDVInvokedUrlCommand*)command;
-- (void)openReactNativeShell:(CDVInvokedUrlCommand*)command;
+- (void)emitToReactNative:(CDVInvokedUrlCommand*)command;     // Cordova -> RN payload
+- (void)openReactNativeShell:(CDVInvokedUrlCommand*)command;  // ask host to show RN
+- (void)openCordovaShell:(CDVInvokedUrlCommand*)command;      // ask host to show Cordova
 @end
