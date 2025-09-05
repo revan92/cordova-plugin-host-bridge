@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-host-bridge"
+        version="1.0.0">
+
+  <name>cordova-plugin-host-bridge</name>
+  <description>Event bridge between Cordova WebView and native host (e.g., a React Native shell)</description>
+  <license>MIT</license>
+  <keywords>bridge,react-native,host,events</keywords>
+  <js-module src="www/hostBridge.js" name="HostBridge">
+    <clobbers target="cordova.plugins.hostBridge" />
+  </js-module>
+
+  <!-- iOS -->
+  <platform name="ios">
+    <!-- Make plugin available as a Cordova feature -->
+    <config-file target="config.xml" parent="/*">
+      <feature name="HostBridge">
+        <param name="ios-package" value="CDVHostBridge" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/CDVHostBridge.h" />
+    <source-file src="src/ios/CDVHostBridge.m" />
+  </platform>
+
+  <!-- Android (stub; safe to keep even if you don’t use it yet) -->
+  <platform name="android">
+    <config-file target="config.xml" parent="/*">
+      <feature name="HostBridge">
+        <param name="android-package" value="com.example.hostbridge.HostBridge"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/HostBridge.java"
+                 target-dir="src/com/example/hostbridge" />
+  </platform>
+</plugin>

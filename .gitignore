@@ -1,0 +1,7 @@
+node_modules/
+platforms/
+plugins/
+Pods/
+*.xcworkspace
+*.xcuser*
+.DS_Store
