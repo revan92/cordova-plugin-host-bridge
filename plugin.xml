@@ -20,7 +20,6 @@
     <config-file target="config.xml" parent="/*">
       <feature name="HostBridge">
         <param name="ios-package" value="CDVHostBridge" />
-        <param name="onload" value="true" />
       </feature>
     </config-file>
 
