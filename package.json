@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-host-bridge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Host bridge between RN shell and Cordova shell",
   "keywords": ["cordova", "plugin", "host", "bridge"],
   "license": "MIT",
